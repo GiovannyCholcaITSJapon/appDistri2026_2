@@ -14,7 +14,6 @@ namespace app.clientesChGio.services.Implementations
             _repositoryCliente = repositoryCliente;
         }
 
-
         public async Task<BaseResponse<ClienteDTO>> Insertar(ClienteDTO clienteDTO)
         {
             var response = new BaseResponse<ClienteDTO>();
@@ -61,8 +60,6 @@ namespace app.clientesChGio.services.Implementations
 
             return response;
         }
-
-
 
 
 

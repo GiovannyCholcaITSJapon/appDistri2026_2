@@ -1,6 +1,9 @@
 using app.clientesChGio.services.Implementations;
+using app.ecCliente.common.EventMQ;
 using app.ecCliente.dataAccess.context;
 using app.ecCliente.dataAccess.repositories;
+using app.ecCliente.services.EventMQ;
+using app.ecCliente.services.Implementations;
 using app.ecCliente.services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,11 +26,17 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.LogTo(Console.WriteLine, LogLevel.Information).EnableSensitiveDataLogging();
 });
 
+// Leer la configuración de RabbitMQ desde el appsettings.json y lo setea en la clase RabbitMQSettings
+builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("rabbitmq"));
 
 //declarar servicio y repositorios
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IClienteService, ClienteService>();
 
+builder.Services.AddScoped<IDireccionClienteRepository, DireccionClienteRepository>();
+builder.Services.AddScoped<IDireccionClienteService, DireccionClienteService>();
+
+builder.Services.AddSingleton<IRabbitMQService, RabbitMQService>();
 
 var app = builder.Build();
 
