@@ -29,7 +29,7 @@ def message():
     return HTMLResponse('<h1>Aplicaciones Distribuidas -- Apis en Python</h1>')
 
 
-@app.post('/deposito', tags=['cuenta'], response_model=dict, status_code=201)
+@app.post('/deposito', tags=['cuenta'], response_model=dict, status_code=201, dependencies=[Depends(JWTBearerToken())])
 def depositar(deposito: DepositoDto) -> dict:
     depIngresado = depositoServicio.Depositar(deposito)
     return JSONResponse(content=jsonable_encoder(depIngresado))

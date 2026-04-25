@@ -1,0 +1,283 @@
+{
+  "info": {
+    "_postman_id": "4fd88076-0392-47e2-b8f5-681ae4f98fb0",
+    "name": "AppDistriNombreApellido",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "10026303"
+  },
+  "item": [
+    {
+      "name": "Cliente",
+      "item": [
+        {
+          "name": "obtener-todos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7176/api/Cliente/obtener-todos",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7176",
+              "path": [
+                "api",
+                "Cliente",
+                "obtener-todos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "obtener-todos gateway",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8001/appdistri/obtener-todos ",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8001",
+              "path": [
+                "appdistri",
+                "obtener-todos "
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "obtener por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7176/api/Cliente/1",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7176",
+              "path": [
+                "api",
+                "Cliente",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "obtener por id Copy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/appdistri/Cliente/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "appdistri",
+                "Cliente",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "crear cliente",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": 0,\r\n  \"estado\": true,\r\n  \"nombre\": \"JIPSON\",\r\n  \"apellido\": \"RODRIGUEZ\",\r\n  \"email\": \"jr@correo.com\",\r\n  \"cedulaIdentidad\": \"1234567\",\r\n  \"fechaNacimiento\": \"2026-03-28T15:04:45.786Z\",\r\n  \"telefono\": \"7777\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7176/api/Cliente",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7176",
+              "path": [
+                "api",
+                "Cliente"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "crear cliente Copy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": 0,\r\n  \"estado\": true,\r\n  \"nombre\": \"JIPSON\",\r\n  \"apellido\": \"RODRIGUEZ\",\r\n  \"email\": \"jr@correo.com\",\r\n  \"cedulaIdentidad\": \"1234567\",\r\n  \"fechaNacimiento\": \"2026-03-28T15:04:45.786Z\",\r\n  \"telefono\": \"7777\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7176/api/Cliente",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7176",
+              "path": [
+                "api",
+                "Cliente"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "ClienteDireccion",
+      "item": [
+        {
+          "name": "registrar cliente direccion",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 0,\r\n    \"clienteId\": 3002,\r\n    \"provincia\": \"Guayas\",\r\n    \"ciudad\": \"Guayaquil\",\r\n    \"direccion\": \"Eloy Alfato\",\r\n    \"codigoPostal\": \"987\",\r\n    \"estado\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7176/api/DireccionCliente",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7176",
+              "path": [
+                "api",
+                "DireccionCliente"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Pedidos",
+      "item": [
+        {
+          "name": "obtener todos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/pedidos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "pedidos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "registrar pedido",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"direccion_cliente_id\": 3,\r\n  \"fecha_pedido\": \"2026-04-02T01:40:34.369Z\",\r\n  \"total\": 7005\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/pedidos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "pedidos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Modificar pedido",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"direccion_cliente_id\": 3,\r\n  \"fecha_pedido\": \"2026-04-02T01:44:34.725Z\",\r\n  \"total\":705\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/pedidos/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "pedidos",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Facturacion",
+      "item": []
+    }
+  ]
+}

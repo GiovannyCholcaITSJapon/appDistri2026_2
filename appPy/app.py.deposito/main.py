@@ -27,7 +27,7 @@ def depositar(deposito: DepositoDto) -> dict:
 def get_depositos() -> dict:
     depositoLista = depositoServicio.Consultar()
     if not depositoLista:
-        return JSONResponse(status_code=404, content={'message':'No existen para la cuenta ingresada'})
+        return JSONResponse(status_code=404, content={'message':'No existen depositos ingresados'})
     
     return JSONResponse(content=jsonable_encoder(depositoLista))
 
