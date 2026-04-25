@@ -19,3 +19,5 @@ class Pedido(Base):
     direccion_cliente_id = Column(Integer, ForeignKey("direcciones_clientes.id"))
     fecha_pedido = Column(DateTime)
     total = Column(Numeric(10, 2))
+
+

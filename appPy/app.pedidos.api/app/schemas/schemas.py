@@ -20,3 +20,9 @@ class DireccionClienteCreate(BaseModel):
     nombre_completo: str
     email: str
     direccion: str
+
+
+"""clase para validar las credenciales del token"""
+class Usuario(BaseModel):
+    email:str
+    password:str

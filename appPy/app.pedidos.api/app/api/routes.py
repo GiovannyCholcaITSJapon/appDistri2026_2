@@ -1,16 +1,17 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from app.services.generic_service import GenericService
 from app.models.models import Pedido
 from app.schemas.schemas import PedidoCreate, PedidoResponse
 from app.core.database import Database
 from app.services.pedido_service import PedidoService
+from app.services.authService import JWTBearerToken
 
 router = APIRouter()
 
 db = Database()
 pedido_service = PedidoService(Pedido, db)
 
-@router.get("/pedidos", tags=['pedidos'], response_model=list[PedidoResponse])
+@router.get("/pedidos", tags=['pedidos'], response_model=list[PedidoResponse], dependencies=[Depends(JWTBearerToken())])
 def get_all():
     return pedido_service.get_all()
 
@@ -21,7 +22,7 @@ def get(id: int):
         raise HTTPException(404, "No encontrado")
     return data
 
-@router.post("/pedidos", tags=['pedidos'], response_model=PedidoResponse)
+@router.post("/pedidos", tags=['pedidos'], response_model=PedidoResponse, dependencies=[Depends(JWTBearerToken())])
 def create(pedido: PedidoCreate):
     return pedido_service.create(pedido.dict())
 
